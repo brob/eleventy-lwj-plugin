@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is a content site</title>
+    <style>
+        html {
+            font-size: 110%;
+            font-family: sans-serif;
+        }
+        body {
+            padding-top: 2rem;
+        }
+        .centered {
+            max-width: 1250px;
+            width: 95vw;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <nav><a href="/">Home</a></nav>
+
+        <h1>{{ title }}</h1>
+
+        {{ content | safe }}
+
+
+        <h2>All Blog posts</h2>
+
+        {% for post in collections.lwjPosts %}
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>
