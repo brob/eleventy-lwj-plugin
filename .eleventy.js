@@ -1,8 +1,8 @@
+const lwjContent = require('./plugin.js')
 module.exports = function(eleventyConfig) {
-
-    eleventyConfig.addCollection("lwjPosts", function(collectionApi) {
-        return collectionApi.getFilteredByTag("lwjPost");
-    });
-    
-
+    eleventyConfig.addPlugin(lwjContent, {
+        blockquoteClass: 'something',
+        headerFileType: "html",
+        headerSelectors: ".centered h1, .centered h2"
+    })
 };

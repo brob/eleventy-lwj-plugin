@@ -26,6 +26,10 @@
         <h1>{{ title }}</h1>
 
         {{ content | safe }}
+
+        {% for bye in array | limit(1) %}
+            {{ bye }}
+        {% endfor %}
     </div>
 </body>
 </html>
